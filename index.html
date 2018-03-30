@@ -1,0 +1,88 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe Game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="manifest" href="./manifest.json">
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Simon Game">
+    <link rel="apple-touch-icon" href="icons/icon-152x152.png">
+    <meta name="msapplication-TileImage" content="icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+</head>
+
+<body onload="init_game()">
+        <div class="alert alert-primary" role="alert" id="updateNotification" style="display:none;">
+                New version available! <a class="btn btn-primary" id="updateButton" href="#" role="button">Update</a>
+              </div>
+       
+    <center>
+        <h1>Tic Tac Toe</h1>
+        <span>by Nigel</span>
+    </center>
+    <div class="board-wrap">
+        <div class="game-status">
+            <div class="game-result">
+            </div>
+            <button class="restart btn btn-danger" onClick="restart_game()">Restart</button>
+        </div>
+        <div class="board">
+
+            <div class="game-init">
+                <div class="mode-select">
+                    <p class="mode-select-text">Select Mode</p>
+                    <ul class="mode-options">
+                        <li id="mode1">Single Player</li>
+                        <li id="mode2">Multi-player</li>
+                    </ul>
+                </div>
+                <div class="icon-select">
+                    <p class="icon-select-text">Choose your icon</p>
+                    <ul class="icon-options">
+                        <li id="icon-o">O</li>
+                        <li id="icon-x">X</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="game-board">
+                <div class="row">
+                    <div class="cell" id="cell1">
+                    </div>
+                    <div class="cell" id="cell2">
+                    </div>
+                    <div class="cell" id="cell3">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell" id="cell4">
+                    </div>
+                    <div class="cell" id="cell5">
+                    </div>
+                    <div class="cell" id="cell6">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell" id="cell7">
+                    </div>
+                    <div class="cell" id="cell8">
+                    </div>
+                    <div class="cell" id="cell9">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+<script src="sw.js"></script>
+</html>

@@ -1,0 +1,84 @@
+body {
+    background: #000;
+    width: 100%;
+    color:#fff;
+    font-family: 'VT323', monospace;
+    background-image:  url('3px-tile.png');
+  }
+  
+  #mode1:hover,#mode2:hover, #icon-o:hover, #icon-x:hover{ cursor: pointer; }
+  
+  
+  .board-wrap {
+    width: 300px;
+    margin: 50px auto;
+    background: #fff;
+    height: 334px;
+  }
+  
+  .game-init {
+    width: 300px;
+    height: 300px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .game-board {
+    color:#000;
+  }
+  .game-result {
+    float: left;
+    color: #000;
+    text-align: left;
+    line-height: 28px;
+    padding-left: 8px;
+    font-size: 34px;
+  }
+  
+  .mode-select {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .row {
+    margin: 0!important;
+    height: 100px;
+  }
+  
+  .cell {
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    width: 100px;
+    height: 100px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .game-status {
+    background: yellow;
+    overflow: hidden;
+  }
+  
+  .restart {
+    float: right;
+    border-radius: 0px;
+  }
+  
+  .game-board {
+    font-size: 60px;
+  }
+  
+  .board {
+    font-size: 24px;
+  }
