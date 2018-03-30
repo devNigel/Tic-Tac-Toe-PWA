@@ -15,8 +15,6 @@ if ('serviceWorker' in navigator) {
                 console.log("sw waiting")
                 updateReady(registration.waiting);
             }
-            console.log(navigator.serviceWorker.ready);
-
             //if service worker is installing
             if (registration.installing) {
                 //track installing
