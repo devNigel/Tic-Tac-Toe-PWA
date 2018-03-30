@@ -1,4 +1,5 @@
 var CACHE_NAME = 'tic-tac-toe-game-cache-v1';
+//update check
 var urlsToCache = [
   '/',
   'style.css',
