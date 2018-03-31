@@ -1,6 +1,6 @@
 const alertBox = document.getElementById("updateNotification");
 const updateButton = document.getElementById("updateButton");
-// let progressBar=document.getElementById("updateProgress");
+
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
         navigator.serviceWorker.register('sw.js').then(function (registration) {
@@ -8,7 +8,6 @@ if ('serviceWorker' in navigator) {
             if (!navigator.serviceWorker.controller) {
                 return;
             }
-
 
             // if updated service worker is waiting
             if (registration.waiting) {
@@ -53,8 +52,6 @@ function updateReady(worker) {
 
     });
 }
-
-
 
 
 navigator.serviceWorker.addEventListener("controllerchange", function () {

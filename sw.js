@@ -1,4 +1,4 @@
-var CACHE_NAME = 'tic-tac-toe-game-cache-v1';
+var CACHE_NAME = 'tic-tac-toe-game-cache-v2';
 var urlsToCache = [
   '/',
   'style.css',
@@ -11,36 +11,50 @@ var urlsToCache = [
 ];
 
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', function (event) {
   console.log("installing")
-// Perform install steps
-event.waitUntil(
+  // Perform install steps
+  event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(function(cache) {
+      .then(function (cache) {
         console.log('Opened cache');
-        return cache.addAll(urlsToCache).then(function() {
+        return cache.addAll(urlsToCache).then(function () {
           console.log('All resources have been fetched and cached.');
         });
       })
   );
 });
 
-self.addEventListener('fetch', function (event){
-    console.log("SW from TicTacToe at work");
+self.addEventListener('fetch', function (event) {
   event.respondWith(
-    caches.match(event.request).then(function(response){
-     return response || fetch(event.request);
+    caches.match(event.request).then(function (response) {
+      return response || fetch(event.request);
 
     })
   );
 
 });
 
-self.addEventListener('message',function(event){
-    this.console.log("message received "+event.data.action)
-    if(event.data.action=="skipWaiting"){
-        self.skipWaiting();
-    }
+self.addEventListener('message', function (event) {
+  this.console.log("message received " + event.data.action)
+  if (event.data.action == "skipWaiting") {
+    self.skipWaiting();
+  }
 })
+
+self.addEventListener('activate', function(event) {
+  let OLD_CACHE="tic-tac-toe-game-cache-";
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          if (cacheName.includes(OLD_CACHE)&&cacheName!==CACHE_NAME) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
 
 
